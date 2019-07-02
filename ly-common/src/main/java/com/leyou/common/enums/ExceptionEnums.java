@@ -19,6 +19,8 @@ public enum  ExceptionEnums {
     BRAND_SAVE_ERROR(500,"新增品牌失败"),
     UPLOAD_IMAGE_ERROR(500,"文件上传失败"),
     ILLEGAL_FILE_TYPE(500,"文件上传失败"),
+    SPEC_GROUP_NOT_FOUND(404,"商品规格组不存在"),
+    SPEC_GROUP_SAVE_ERROR(500,"新增规格组失败"),
     ;
     private int code;
     private String msg;
