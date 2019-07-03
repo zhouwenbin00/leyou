@@ -1,6 +1,7 @@
 package com.leyou.item.web;
 
 import com.leyou.item.pojo.SpecGroup;
+import com.leyou.item.pojo.SpecParam;
 import com.leyou.item.pojo.Specification;
 import com.leyou.item.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,17 @@ public class SpecificationController {
     @PostMapping("group")
     public ResponseEntity<Void> saveGroup(@RequestBody() Map<String,String> map){
         specificationService.saveGroup(Long.parseLong(map.get("cid")),  String.valueOf(map.get("name")));
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @GetMapping("params")
+    public ResponseEntity<List<SpecParam>> queryParamByGid(@RequestParam("gid") Long gid){
+        return ResponseEntity.ok(specificationService.queryParamByGid(gid));
+    }
+
+    @PostMapping("param")
+    public ResponseEntity<Void> saveParam(@RequestBody() SpecParam specParam){
+        specificationService.saveParam(specParam);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

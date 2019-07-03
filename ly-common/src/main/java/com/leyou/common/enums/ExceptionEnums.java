@@ -21,6 +21,10 @@ public enum  ExceptionEnums {
     ILLEGAL_FILE_TYPE(500,"文件上传失败"),
     SPEC_GROUP_NOT_FOUND(404,"商品规格组不存在"),
     SPEC_GROUP_SAVE_ERROR(500,"新增规格组失败"),
+    SPEC_PARAM_NOT_FOUND(404,"商品规格参数不存在"),
+    SPEC_PARAM_SAVE_ERROR(500,"新增规格参数失败"),
+    GOODS_NOT_FOUND(404,"商品不存在"),
+
     ;
     private int code;
     private String msg;
